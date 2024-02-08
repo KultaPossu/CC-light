@@ -6,4 +6,31 @@ body {
 }
 
 .control-container {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  /* This doesn't work in landscape */
+  width: 80vw;
+  height: 80vw;
+  max-width: 500px;
+  max-height: 500px;
+
+  border-radius: 50%;
+
+  /* Create the wheel with gradient, we can render div on top of it to make it a wheel */
+  /* With multiple colors set to the gradient it is more usable than with just rgb */
+  background: conic-gradient(
+    from -80deg,
+    red,
+    yellow,
+    lime,
+    aqua,
+    blue,
+    magenta,
+    red
+  );
+
+  cursor: pointer;
 }
