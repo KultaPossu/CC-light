@@ -46,7 +46,24 @@ body {
   border-radius: 50%;
   border: none;
 
-  background-color: green;
+  cursor: pointer;
 
-  font-size: 20px;
+  background-color: #000;
+
+  @media (min-width: 625px) {
+    width: 300px;
+    height: 300px;
+    inset: 100px;
+  }
+}
+
+.control-toggle img {
+  width: 50px;
+  height: auto;
+  /* Use filter to invert the svg to white, not the most performant way, but works for this */
+  filter: brightness(0) invert(1);
+}
+
+.control-toggle .toggled-on {
+  filter: none;
 }

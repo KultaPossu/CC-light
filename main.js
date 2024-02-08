@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const colorWheel = document.getElementById("color-wheel");
+  const lightToggle = document.getElementById("light-toggle");
   let isMouseDown = false;
   let isLightOn = false;
   // used for when light is switched off and then on
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const color = `hsl(${degrees}, 100%, 50%)`;
     document.body.style.backgroundColor = color;
+    lightToggle.style.backgroundColor = color;
     lastColor = color;
   };
 
@@ -56,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /**
    * Toggle logic
    */
-  const lightToggle = document.getElementById("light-toggle");
+  const lightToggleIcon = document.getElementById("light-toggle-icon");
 
   lightToggle.addEventListener("click", (e) => {
     e.stopPropagation();
@@ -65,10 +67,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!isLightOn) {
       document.body.style.backgroundColor = "#000";
+      lightToggle.style.backgroundColor = "#000";
+
+      lightToggleIcon.classList = "";
+
       return;
     }
 
     document.body.style.backgroundColor = lastColor;
+    lightToggle.style.backgroundColor = lastColor;
+
+    lightToggleIcon.classList = "toggled-on";
   });
 
   // Stop propagation from move events as well
