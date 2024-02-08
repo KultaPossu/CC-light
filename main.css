@@ -34,3 +34,19 @@ body {
 
   cursor: pointer;
 }
+
+.control-toggle {
+  --button-inset: 15vw;
+
+  position: absolute;
+  inset: var(--button-inset);
+  height: calc(100% - var(--button-inset) * 2);
+  width: calc(100% - var(--button-inset) * 2);
+
+  border-radius: 50%;
+  border: none;
+
+  background-color: green;
+
+  font-size: 20px;
+}
